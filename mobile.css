@@ -1,0 +1,166 @@
+@media screen and (max-width:800px) {
+  #nav {
+    display: inline;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    position: absolute;
+  }
+
+  #nav img {
+    margin: 10px 20px;
+  }
+
+  .navigation {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #bar1 {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    padding-top: 100px;
+  }
+
+  #state1 {
+    width: 100vw;
+  }
+
+  #state1 h1 {
+    /* background: #000; */
+    padding: 0;
+    font-size: 25px;
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  .applybtn {
+    margin: 0;
+    margin-top: 100px;
+  }
+
+  #bar2 {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 20px;
+    width: 95vw;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+
+  #bar2 p {
+    font-size: small;
+    text-align: left;
+    line-height: 30px;
+
+  }
+
+  .subbars {
+    margin-bottom: 40px;
+  }
+
+  #services {
+    margin-bottom: 40px;
+  }
+  .servicecont{
+    animation-name: scroll1;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes scroll1 {
+    from {
+        transform: translateX(200%);
+    }
+
+    to {
+        transform: translateX(-780%);
+    }
+}
+    #firstrow{
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #secondrow{
+      align-items: center;
+      flex-direction: column;
+    }
+    .rolbars{
+      margin-bottom: 40px;
+    }
+    .block{
+      width: 15rem;
+    }
+    
+    .que .header h5{
+      /* background: #000; */
+      font-size: larger;
+      width: 45vw;
+    }
+    .que{
+      height: fit-content;
+    }
+    #questions{
+      margin-bottom: 40px;
+    }
+    #rwise{
+      flex-direction: column;
+    }
+    #rwise #cont1{
+      width: 95vw;
+      margin: auto;
+    }
+    #rwise #cont2{
+      width: 95vw;
+      margin: auto;
+    }
+    .name input{
+      width: 70vw;
+    }
+    .mail{
+      left: 50px;
+      top: 150px;
+    }
+    .mail input{
+      width: 70vw;
+    }
+    .sub{
+      display: flex;
+      flex-direction: column;
+      top: 250px;
+    }
+    .sub input{
+      width: 70vw;
+    }
+
+    .mess{
+      display: flex;
+      flex-direction: column;
+      margin-top: 330px;
+      margin-left: 30px;
+    }
+    .mess textarea{
+      width: 55vw;
+    }
+
+    .submitbtn{
+      width: 100px;
+    }
+    #foot{
+      display: flex;
+      flex-direction: column;
+      height: max-content;
+
+    }
+    .social{
+      position: relative;
+    }
+
+    footer{
+      padding: 50px 30px;
+    }
+}

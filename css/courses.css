@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+
+#cursor {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #f4c435;
+    filter: blur(2px);
+    position: fixed;
+    z-index: 99;
+}
+
+#nav {
+    background: #2a2762;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 47px 70px;
+    gap: 38px;
+    /* position: fixed; */
+    justify-content: flex-start;
+
+}
+.navigation{
+    display: flex;
+    gap: 53px;
+}
+
+.navigation div{
+    display: flex;
+    gap: 53px;
+}
+
+
+#nav a {
+    text-decoration: none;
+    color: white;
+}
+
+#nav a h4 {
+    font-weight: 500;
+    font-size: medium;
+
+}
+
+#nav a h4:hover {
+    transition: all 0.15s ease-in;
+    color: #ffc107;
+}
+
+#nav img {
+    height: 70px;
+    border-radius: 50px;
+    margin-right: 70px;
+}
+
+#main {
+    position: relative;
+}
+
+#submain {
+    position: relative;
+    height: auto;
+    margin-top: 10px;
+    background: #f8f8f5;
+    padding-top: 50px;
+    padding-top: 70px;
+}
+
+.subbars {
+    height: auto;
+    margin: 0 30px;
+    color: aliceblue;
+    line-height: 40px;
+    padding: 30px 60px 40px 60px;
+    width: auto;
+    background: #2a2762;
+    border: 1px solid #a398f6;
+    border-radius: 50px;
+    z-index: -1;
+}
+
+
+#services {
+    width: 95vw;
+    margin: auto;
+    margin-bottom: 100px;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+}
+
+#services::-webkit-scrollbar {
+    display: none;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(300%);
+    }
+
+    to {
+        transform: translateX(-810%);
+    }
+}
+
+.servicecont {
+    display: inline-block;
+    text-align: center;
+    /* background: red; */
+    margin: 0 20px;
+    animation-name: scroll;
+    animation-duration: 45s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
+
+#services h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.servicecont h2 {
+    margin: auto;
+    /* background: #000; */
+    width: auto;
+    text-align: center;
+}
+
+.logo {
+    height: 200px;
+}
+
+.logo:hover {
+    padding-top: 10px;
+    transition: all linear 0.1s;
+
+}
+
+.pylogo {
+    height: 190px;
+    margin-top: 10px;
+
+}
+
+.pylogo:hover {
+    padding-top: 10px;
+    transition: all linear 0.1s;
+}
+
+.servicebtn {
+    padding: 3px 8px;
+    font-size: 18px;
+    color: #ffc107;
+    border: 1px solid #ffc107;
+    border-radius: 6px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.servicebtn:hover {
+    transition: all 0.15s ease-in;
+    background: #ffc107;
+    color: black;
+
+}
+
+#course {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* background: #000; */
+
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+#firstrow {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+#secondrow {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: center;
+}
+
+
+
+.rolbars {
+    height: auto;
+    margin: 0px 30px;
+    color: aliceblue;
+    line-height: 40px;
+    margin-bottom: 100px;
+    padding: 60px 0;
+    padding-top: 40px;
+    width: auto;
+    background: #2a2762;
+    border: 1px solid #a398f6;
+    border-radius: 50px;
+    z-index: -1;
+}
+
+
+.block {
+    --bs-card-spacer-y: 1rem;
+    --bs-card-spacer-x: 1rem;
+    --bs-card-title-spacer-y: 0.5rem;
+    --bs-card-title-color: ;
+    --bs-card-subtitle-color: ;
+    --bs-card-border-width: var(--bs-border-width);
+    --bs-card-border-color: var(--bs-border-color-translucent);
+    --bs-card-border-radius: var(--bs-border-radius);
+    --bs-card-box-shadow: ;
+    --bs-card-inner-border-radius: calc(var(--bs-border-radius) - (var(--bs-border-width)));
+    --bs-card-cap-padding-y: 0.5rem;
+    --bs-card-cap-padding-x: 1rem;
+    --bs-card-cap-bg: rgba(var(--bs-body-color-rgb), 0.03);
+    --bs-card-cap-color: ;
+    --bs-card-color: ;
+    --bs-card-bg: var(--bs-body-bg);
+    --bs-card-img-overlay-padding: 1rem;
+    --bs-card-group-margin: 0.75rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: var(--bs-card-height);
+    color: var(--bs-body-color);
+    word-wrap: break-word;
+    background-color: var(--bs-card-bg);
+    background-clip: border-box;
+    border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+    border-radius: var(--bs-card-border-radius);
+    /* height: 300px; */
+    width: 18rem;
+}
+
+
+/* ---------------------------------------------------------------------------------- */
+
+@media screen and (max-width:800px) {
+    #nav {
+        flex-direction: column;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 40px;
+    }
+
+    #nav img {
+        margin-top: 10px;
+        margin-left: 50px;
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .navigation div {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+
+    }
+
+    .subnav {
+        margin-left: 20px;
+        margin-bottom: 20px;
+    }
+
+    #services {
+        margin-bottom: 40px;
+    }
+
+    .servicecont {
+        animation-name: scroll1;
+        animation-duration: 20s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes scroll1 {
+        from {
+            transform: translateX(200%);
+        }
+
+        to {
+            transform: translateX(-780%);
+        }
+    }
+
+    #firstrow {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #secondrow {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .rolbars {
+        margin-bottom: 40px;
+        width: 95vw;
+        margin: auto;
+    }
+
+    .block {
+        width: 15rem;
+    }
+
+}

@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+
+#cursor {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #f4c435;
+    filter: blur(2px);
+    position: fixed;
+    z-index: 99;
+}
+
+#nav {
+    background: #2a2762;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 47px 70px;
+    gap: 38px;
+    /* position: fixed; */
+    justify-content: flex-start;
+
+}
+
+.navigation{
+    display: flex;
+    gap: 53px;
+}
+
+.navigation div{
+    display: flex;
+    gap: 53px;
+}
+
+#nav a {
+    text-decoration: none;
+    color: white;
+}
+
+#nav a h4 {
+    font-weight: 500;
+    font-size: medium;
+
+}
+
+#nav a h4:hover {
+    transition: all 0.15s ease-in;
+    color: #ffc107;
+}
+
+#nav img {
+    height: 70px;
+    border-radius: 50px;
+    margin-right: 70px;
+}
+#bar5 {
+    height: auto;
+    background: rgb(236, 242, 247);
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#rwise {
+    margin-top: 20px;
+    height: auto;
+    display: flex;
+    /* background: yellow; */
+    padding: 30px 0;
+    position: relative;
+    justify-content: center;
+    gap: 30px;
+}
+
+#rwise #cont1 {
+    position: relative;
+    height: 400px;
+    width: 44%;
+    background: #2a2762;
+    border: 1px solid #a398f6;
+    border-radius: 50px;
+    color: aliceblue;
+    padding-top: 30px;
+
+}
+
+#rwise #cont2 {
+    position: relative;
+    padding: 50px 20px;
+    color: aliceblue;
+    height: auto;
+    width: 50%;
+    background: #2a2762;
+    border: 1px solid #a398f6;
+    border-radius: 50px;
+    margin-bottom: 100px;
+}
+
+.name {
+    text-align: left;
+    position: absolute;
+    left: 50px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.name input {
+    border: 2px solid #ffc107;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin: 10px 0;
+    width: 20vw;
+}
+
+.mail {
+    text-align: left;
+    position: absolute;
+    right: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mail input {
+    border: 2px solid #ffc107;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin: 10px 0;
+    width: 20vw;
+}
+
+.sub {
+    text-align: left;
+    position: absolute;
+    left: 50px;
+    top: 24%;
+}
+
+.sub input {
+    border: 2px solid #ffc107;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin: 10px 0;
+    width: 41vw;
+}
+
+.mess {
+    text-align: left;
+    float: left;
+    margin-top: 250px;
+    margin-left: 30px;
+}
+
+.mess textarea {
+    border: 2px solid #ffc107;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin: 10px 0;
+    width: 41vw;
+
+}
+
+
+.submitbtn {
+    margin-top: 20px;
+    padding: 3px 8px;
+    font-size: 18px;
+    color: #ffc107;
+    border: 1px solid #ffc107;
+    border-radius: 6px;
+    background: transparent;
+    cursor: pointer;
+
+}
+
+
+.submitbtn:hover {
+    transition: all 0.15s ease-in;
+    background: #ffc107;
+    color: black;
+
+}
+
+.more {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+#moreadd {
+    position: absolute;
+    margin-top: 30px;
+    top: 80px;
+    left: 100px;
+
+}
+
+
+.icon {
+    display: flex;
+    gap: 20px;
+
+
+}
+
+.icon img {
+    position: absolute;
+    border: 1.5px solid black;
+    border-radius: 50%;
+    background: aliceblue;
+    left: -70px;
+    height: 44px;
+    padding: 10px;
+
+}
+
+.icon img:hover {
+    background: #ffc107;
+    transition: all ease-in 0.1s;
+}
+
+.icon:hover {
+    color: #ffc107;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+@media screen and (max-width:800px) {
+    #nav {
+        flex-direction: column;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 40px;
+    }
+
+    #nav img {
+        margin-top: 10px;
+        margin-left: 50px;
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .navigation div {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+
+    }
+    .subnav {
+        margin-left: 20px;
+        margin-bottom: 20px;
+    }
+
+    #bar5{
+        padding: 0;
+    }
+
+    #rwise{
+        flex-direction: column;
+      }
+      #rwise #cont1{
+        width: 95vw;
+        margin: auto;
+      }
+      #rwise #cont2{
+        width: 95vw;
+        margin: auto;
+      }
+      .name input{
+        width: 70vw;
+      }
+      .mail{
+        left: 50px;
+        top: 150px;
+      }
+      .mail input{
+        width: 70vw;
+      }
+      .sub{
+        display: flex;
+        flex-direction: column;
+        top: 250px;
+      }
+      .sub input{
+        width: 70vw;
+      }
+  
+      .mess{
+        display: flex;
+        flex-direction: column;
+        margin-top: 330px;
+        margin-left: 30px;
+      }
+      .mess textarea{
+        width: 55vw;
+      }
+  
+      .submitbtn{
+        width: 100px;
+      }
+}
