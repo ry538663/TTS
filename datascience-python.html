@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Science with AI & ML | Triunity Tech Solutions</title>
+  <style>
+    /* ===== CSS STYLES ===== */
+    :root {
+      --primary: #ffc107;
+      --dark: #2c3e50;
+      --gray: #495057;
+      --light-bg: #f8f9fa;
+      --ai-purple: #7e57c2;
+      --ml-orange: #ff7043;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: var(--light-bg);
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Navigation Styles */
+    #nav {
+      background: rgb(212, 81, 81);
+      padding: 1rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    /* Main Content Styles */
+    #main {
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .program-detail {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .program-detail h1 {
+      color: var(--primary);
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #eee;
+      position: relative;
+    }
+    
+    .program-detail h1::after {
+      content: "🤖";
+      position: absolute;
+      right: 20%;
+      top: -10px;
+      font-size: 2rem;
+    }
+    
+    /* Program Info Layout */
+    .program-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    
+    .program-description {
+      flex: 2;
+      min-width: 300px;
+    }
+    
+    .program-details {
+      flex: 1;
+      background: var(--light-bg);
+      padding: 1.5rem;
+      border-radius: 8px;
+      min-width: 250px;
+    }
+    
+    /* Content Styles */
+    h3 {
+      color: var(--dark);
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--primary);
+    }
+    
+    p {
+      font-size: 1.1rem;
+      color: var(--gray);
+      margin-bottom: 1.5rem;
+    }
+    
+    ul {
+      padding-left: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    li {
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 1.5rem;
+      font-size: 1.05rem;
+    }
+    
+    li::before {
+      content: "•";
+      color: var(--primary);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      font-size: 1.2rem;
+    }
+    
+    strong {
+      color: var(--dark);
+      font-weight: 600;
+    }
+    
+    /* Button Styles */
+    .btn-warning {
+      background-color: var(--primary);
+      color: #212529;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      margin-top: 1rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    
+    .btn-warning:hover {
+      background-color: #e0a800;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+    }
+    
+    /* Footer Styles */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    
+    /* AI/ML Specific Styles */
+    .ai-highlight {
+      background: linear-gradient(135deg, #f3e5f5 0%, #e3f2fd 100%);
+      border-left: 4px solid var(--ai-purple);
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 0 4px 4px 0;
+    }
+    
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    
+    .tech-pill {
+      background-color: var(--ai-purple);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      display: inline-block;
+    }
+    
+    .tech-pill.ml {
+      background-color: var(--ml-orange);
+    }
+    
+    .project-card {
+      background: white;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    
+    .project-card h4 {
+      color: var(--ai-purple);
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+    }
+    
+    .project-card h4::before {
+      content: "🧠";
+      margin-right: 8px;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 992px) {
+      .program-info {
+        flex-direction: column;
+      }
+      
+      .program-details {
+        order: -1;
+      }
+      
+      .program-detail h1::after {
+        right: 10%;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .program-detail h1 {
+        font-size: 2rem;
+      }
+      
+      .program-detail h1::after {
+        font-size: 1.5rem;
+        right: 5%;
+        top: -5px;
+      }
+      
+      h3 {
+        font-size: 1.3rem;
+      }
+    }
+    
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .program-info {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <div id="nav">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+      <img src="images\up logo.jpeg" alt="Triunity Tech Solutions Logo" height="50">
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0.5rem;">
+        <a href="index.html" style="text-decoration: none; color: #ffc107; font-weight: 600;">Home</a>
+        <a href="about.html" style="text-decoration: none; color: #333;">About</a>
+        <a href="courses.html" style="text-decoration: none; color: #333;">Courses</a>
+        <a href="contact.html" style="text-decoration: none; color: #333;">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main">
+    <section class="program-detail">
+      <div class="container">
+        <h1>Data Science with AI & ML</h1>
+        <div class="program-info">
+          <div class="program-description">
+            <h3>About the Program</h3>
+            <p>Master the complete data-to-insights pipeline with cutting-edge AI and Machine Learning techniques. This comprehensive program covers everything from data wrangling to deploying intelligent models.</p>
+            
+            <div class="ai-highlight">
+              <p><strong>Industry Demand:</strong> Data Scientist roles have grown 650% since 2012 with average salaries of ₹8-20 LPA for entry-level positions.</p>
+            </div>
+
+            <h3>Curriculum Highlights</h3>
+            <div class="tech-stack">
+              <span class="tech-pill">Python for DS</span>
+              <span class="tech-pill">NumPy/Pandas</span>
+              <span class="tech-pill ml">Scikit-learn</span>
+              <span class="tech-pill">TensorFlow</span>
+              <span class="tech-pill ml">Neural Networks</span>
+              <span class="tech-pill">Data Visualization</span>
+              <span class="tech-pill ml">NLP</span>
+              <span class="tech-pill">Model Deployment</span>
+            </div>
+
+            <h3>Hands-on Projects</h3>
+            <div class="project-card">
+              <h4>Predictive Analytics</h4>
+              <p>Build models to predict customer churn, stock prices, or disease outcomes using real-world datasets.</p>
+            </div>
+            <div class="project-card">
+              <h4>Computer Vision</h4>
+              <p>Develop image classification systems for object recognition using convolutional neural networks.</p>
+            </div>
+            <div class="project-card">
+              <h4>Natural Language Processing</h4>
+              <p>Create sentiment analysis and text classification models for social media data.</p>
+            </div>
+          </div>
+          
+          <div class="program-details">
+            <h3>Program Details</h3>
+            <p><strong>Duration:</strong> 16 weeks (80 hours)</p>
+            <p><strong>Format:</strong> Project-based learning</p>
+            <p><strong>Prerequisites:</strong> Basic Python knowledge</p>
+            <p><strong>Certification:</strong> Data Science Professional Certificate</p>
+            
+            <h3>Career Outcomes</h3>
+            <ul>
+              <li>Data Scientist</li>
+              <li>ML Engineer</li>
+              <li>AI Specialist</li>
+              <li>Business Intelligence Analyst</li>
+            </ul>
+            
+            <div class="ai-highlight" style="border-left-color: var(--ml-orange);">
+              <p><strong>Tools You'll Master:</strong> Jupyter, Pandas, Matplotlib, Scikit-learn, TensorFlow, Keras</p>
+            </div>
+            
+            <a href="https://forms.gle/eWaiHdpVGWx7uR3X7" class="btn-warning">Enroll Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <p>© 2023 Triunity Tech Solutions. All rights reserved.</p>
+      <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+        <a href="#" style="color: white; text-decoration: none;">Privacy Policy</a>
+        <a href="#" style="color: white; text-decoration: none;">Terms of Service</a>
+        <a href="contact.html" style="color: white; text-decoration: none;">Contact Us</a>
+      </div>
+      <div style="margin-top: 1.5rem;">
+        <p>Lucknow, Uttar Pradesh, India</p>
+        <p>Phone: +91 8429395963 | Email: services@triunitytechsolutions.tech</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

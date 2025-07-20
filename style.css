@@ -73,6 +73,88 @@ body {
 #main {
     position: relative;
 }
+#program-interface {
+  padding: 40px 60px;
+  background-color:#a398f6;
+ 
+}
+
+#program-interface h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #000;
+}
+
+.filters {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.filters select {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  min-width: 150px;
+  cursor: pointer;
+}
+
+#explore-btn {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+#explore-btn:hover {
+  background-color: #222;
+}
+
+.interface-content {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.left-text {
+  flex: 1 1 300px;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #000;
+}
+
+.program-buttons {
+  flex: 3 1 600px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px 20px;
+}
+
+.program-buttons button {
+  border: 2px solid #2a6f2a; /* green border */
+  background: transparent;
+  color: #004080; /* dark blue text */
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.program-buttons button:hover {
+  background-color: #2a6f2a;
+  color:white;
+}
+
 
 #submain {
     position: relative;
@@ -572,6 +654,75 @@ body {
     color: #ffc107;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #9a2727;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+    padding: 20px 0;
+}
+
+.carousel img {
+    max-width: 150px;
+    margin: 0 20px;
+    height: auto;
+    object-fit: contain;
+}
+
+.carousel-button {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 1;
+    transition: background 0.3s;
+}
+
+.carousel-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-button.prev {
+    margin-right: 20px;
+}
+
+.carousel-button.next {
+    margin-left: 20px;
+}
+
 footer {
     background: #121212;
     color: aliceblue;
@@ -666,4 +817,107 @@ footer {
     background: #ffc107;
     border-radius: 50px;
     cursor: pointer;
+}
+/* ===== UNIVERSAL COURSE PAGE STYLES ===== */
+.course-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.course-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #ffc107;
+}
+
+.course-header h1 {
+  color: #ffc107;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.course-content {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.course-description {
+  flex: 2;
+  min-width: 300px;
+}
+
+.course-details {
+  flex: 1;
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  min-width: 250px;
+}
+
+/* Consistent Content Blocks */
+.course-section {
+  margin-bottom: 2rem;
+}
+
+.course-section h3 {
+  color: #343a40;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.course-list {
+  padding-left: 1.2rem;
+}
+
+.course-list li {
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.course-list li::before {
+  content: "•";
+  color: #ffc107;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Standardized Button */
+.enroll-btn {
+  display: block;
+  background: #ffc107;
+  color: #212529;
+  text-align: center;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: 1.5rem;
+}
+
+.enroll-btn:hover {
+  background: #e0a800;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .course-content {
+    flex-direction: column;
+  }
+  
+  .course-header h1 {
+    font-size: 2rem;
+  }
+  
+  .course-details {
+    order: -1;
+  }
 }

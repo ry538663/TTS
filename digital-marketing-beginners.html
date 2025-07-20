@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digital Marketing | Triunity Tech Solutions</title>
+  <style>
+    /* ===== CSS STYLES ===== */
+    :root {
+      --primary: #ff6b6b;
+      --dark: #2c3e50;
+      --gray: #495057;
+      --light-bg: #f8f9fa;
+      --marketing-green: #0f9d58;
+      --facebook-blue: #3b5998;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: var(--light-bg);
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Navigation Styles */
+    #nav {
+      background: rgb(223, 77, 77);
+      padding: 1rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    /* Main Content Styles */
+    #main {
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .program-detail {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .program-detail h1 {
+      color: var(--primary);
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #eee;
+      position: relative;
+    }
+    
+    .program-detail h1::after {
+      content: "📢";
+      position: absolute;
+      right: 20%;
+      top: -10px;
+      font-size: 2rem;
+    }
+    
+    /* Program Info Layout */
+    .program-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    
+    .program-description {
+      flex: 2;
+      min-width: 300px;
+    }
+    
+    .program-details {
+      flex: 1;
+      background: var(--light-bg);
+      padding: 1.5rem;
+      border-radius: 8px;
+      min-width: 250px;
+    }
+    
+    /* Content Styles */
+    h3 {
+      color: var(--dark);
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--primary);
+    }
+    
+    p {
+      font-size: 1.1rem;
+      color: var(--gray);
+      margin-bottom: 1.5rem;
+    }
+    
+    ul {
+      padding-left: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    li {
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 1.5rem;
+      font-size: 1.05rem;
+    }
+    
+    li::before {
+      content: "•";
+      color: var(--primary);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      font-size: 1.2rem;
+    }
+    
+    strong {
+      color: var(--dark);
+      font-weight: 600;
+    }
+    
+    /* Button Styles */
+    .btn-primary {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      margin-top: 1rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    
+    .btn-primary:hover {
+      background-color: #e05555;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+    }
+    
+    /* Footer Styles */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    
+    /* Digital Marketing Specific Styles */
+    .marketing-highlight {
+      background: linear-gradient(135deg, #e6ffec 0%, #f5f5f5 100%);
+      border-left: 4px solid var(--marketing-green);
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 0 4px 4px 0;
+    }
+    
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    
+    .platform-card {
+      background: white;
+      border: 1px solid #eee;
+      border-radius: 6px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    
+    .platform-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .platform-card img {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 0.5rem;
+    }
+    
+    .platform-card.facebook {
+      border-top: 3px solid var(--facebook-blue);
+    }
+    
+    .platform-card.google {
+      border-top: 3px solid #4285f4;
+    }
+    
+    .platform-card.seo {
+      border-top: 3px solid #0f9d58;
+    }
+    
+    .platform-card.content {
+      border-top: 3px solid #ff5722;
+    }
+    
+    .campaign-example {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--marketing-green);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    
+    .campaign-example h4 {
+      color: var(--marketing-green);
+      margin-bottom: 0.8rem;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 992px) {
+      .program-info {
+        flex-direction: column;
+      }
+      
+      .program-details {
+        order: -1;
+      }
+      
+      .program-detail h1::after {
+        right: 10%;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .program-detail h1 {
+        font-size: 2rem;
+      }
+      
+      .program-detail h1::after {
+        font-size: 1.5rem;
+        right: 5%;
+        top: -5px;
+      }
+      
+      h3 {
+        font-size: 1.3rem;
+      }
+      
+      .platform-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .program-info {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <div id="nav">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+      <img src="images\up logo.jpeg" alt="Triunity Tech Solutions Logo" height="50">
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0.5rem;">
+        <a href="index.html" style="text-decoration: none; color: #ff6b6b; font-weight: 600;">Home</a>
+        <a href="about.html" style="text-decoration: none; color: #333;">About</a>
+        <a href="courses.html" style="text-decoration: none; color: #333;">Courses</a>
+        <a href="contact.html" style="text-decoration: none; color: #333;">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main">
+    <section class="program-detail">
+      <div class="container">
+        <h1>Digital Marketing for Beginners</h1>
+        <div class="program-info">
+          <div class="program-description">
+            <h3>About the Program</h3>
+            <p>Launch your digital marketing career with this comprehensive beginner's program. Learn to create effective campaigns across all major digital platforms and channels.</p>
+            
+            <div class="marketing-highlight">
+              <p><strong>Industry Growth:</strong> Digital marketing jobs are growing 33% faster than average, with over 860,000 job openings in India alone.</p>
+            </div>
+
+            <h3>Platforms You'll Master</h3>
+            <div class="platform-grid">
+              <div class="platform-card facebook">
+                <div>👍</div>
+                <strong>Facebook Ads</strong>
+              </div>
+              <div class="platform-card google">
+                <div>🔍</div>
+                <strong>Google Ads</strong>
+              </div>
+              <div class="platform-card seo">
+                <div>📈</div>
+                <strong>SEO</strong>
+              </div>
+              <div class="platform-card content">
+                <div>✍️</div>
+                <strong>Content Marketing</strong>
+              </div>
+              <div class="platform-card">
+                <div>📧</div>
+                <strong>Email Marketing</strong>
+              </div>
+              <div class="platform-card">
+                <div>📱</div>
+                <strong>Social Media</strong>
+              </div>
+            </div>
+
+            <h3>Real-world Campaign Examples</h3>
+            <div class="campaign-example">
+              <h4>E-commerce Product Launch</h4>
+              <p>Plan and execute a multi-channel campaign to launch a new product, including social media, email, and paid ads.</p>
+            </div>
+            <div class="campaign-example">
+              <h4>Local Business SEO</h4>
+              <p>Optimize a local business website to rank higher in search results and attract more customers.</p>
+            </div>
+            <div class="campaign-example">
+              <h4>Influencer Collaboration</h4>
+              <p>Develop and manage an influencer marketing campaign to increase brand awareness.</p>
+            </div>
+          </div>
+          
+          <div class="program-details">
+            <h3>Program Details</h3>
+            <p><strong>Duration:</strong> 8 weeks (40 hours)</p>
+            <p><strong>Format:</strong> Practical workshops</p>
+            <p><strong>Prerequisites:</strong> Basic computer skills</p>
+            <p><strong>Certification:</strong> Digital Marketing Associate</p>
+            
+            <h3>Career Outcomes</h3>
+            <ul>
+              <li>Digital Marketing Executive (₹3-8 LPA)</li>
+              <li>Social Media Manager</li>
+              <li>SEO Specialist</li>
+              <li>Content Marketer</li>
+            </ul>
+            
+            <div class="marketing-highlight" style="border-left-color: var(--facebook-blue);">
+              <p><strong>What You'll Create:</strong> Portfolio with 3+ complete marketing campaigns</p>
+            </div>
+            
+            <a href="https://forms.gle/eWaiHdpVGWx7uR3X7" class="btn-primary">Enroll Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <p>© 2023 Triunity Tech Solutions. All rights reserved.</p>
+      <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+        <a href="#" style="color: white; text-decoration: none;">Privacy Policy</a>
+        <a href="#" style="color: white; text-decoration: none;">Terms of Service</a>
+        <a href="contact.html" style="color: white; text-decoration: none;">Contact Us</a>
+      </div>
+      <div style="margin-top: 1.5rem;">
+        <p>Lucknow, Uttar Pradesh, India</p>
+        <p>Phone: +91 8429395963 | Email: services@triunitytechsolutions.tech</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

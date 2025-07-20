@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Python Programming | Triunity Tech Solutions</title>
+  <style>
+    /* ===== CSS STYLES ===== */
+    :root {
+      --primary: #ffc107;
+      --dark: #2c3e50;
+      --gray: #495057;
+      --light-bg: #f8f9fa;
+      --python-blue: #3776ab;
+      --python-yellow: #ffd43b;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: var(--light-bg);
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Navigation Styles */
+    #nav {
+      background: rgb(226, 43, 43);
+      padding: 1rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    /* Main Content Styles */
+    #main {
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .program-detail {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .program-detail h1 {
+      color: var(--primary);
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #eee;
+    }
+    
+    /* Program Info Layout */
+    .program-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    
+    .program-description {
+      flex: 2;
+      min-width: 300px;
+    }
+    
+    .program-details {
+      flex: 1;
+      background: var(--light-bg);
+      padding: 1.5rem;
+      border-radius: 8px;
+      min-width: 250px;
+    }
+    
+    /* Content Styles */
+    h3 {
+      color: var(--dark);
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--primary);
+    }
+    
+    p {
+      font-size: 1.1rem;
+      color: var(--gray);
+      margin-bottom: 1.5rem;
+    }
+    
+    ul {
+      padding-left: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    li {
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 1.5rem;
+      font-size: 1.05rem;
+    }
+    
+    li::before {
+      content: "•";
+      color: var(--primary);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      font-size: 1.2rem;
+    }
+    
+    strong {
+      color: var(--dark);
+      font-weight: 600;
+    }
+    
+    /* Button Styles */
+    .btn-warning {
+      background-color: var(--primary);
+      color: #212529;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      margin-top: 1rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    
+    .btn-warning:hover {
+      background-color: #e0a800;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+    }
+    
+    /* Footer Styles */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    
+    /* Python Specific Styles */
+    .python-highlight {
+      background-color: #f0f8ff;
+      border-left: 4px solid var(--python-blue);
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 0 4px 4px 0;
+    }
+    
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    
+    .feature-card {
+      background: white;
+      border: 1px solid #eee;
+      border-radius: 6px;
+      padding: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    
+    .feature-card h4 {
+      color: var(--python-blue);
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+    }
+    
+    .feature-card h4::before {
+      content: "🐍";
+      margin-right: 8px;
+    }
+    
+    .python-badge {
+      background-color: var(--python-yellow);
+      color: var(--python-blue);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      display: inline-block;
+      margin-left: 8px;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 992px) {
+      .program-info {
+        flex-direction: column;
+      }
+      
+      .program-details {
+        order: -1;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .program-detail h1 {
+        font-size: 2rem;
+      }
+      
+      h3 {
+        font-size: 1.3rem;
+      }
+      
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .program-info {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <div id="nav">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+      <img src="images\up logo.jpeg" alt="Triunity Tech Solutions Logo" height="50">
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0.5rem;">
+        <a href="index.html" style="text-decoration: none; color: #ffc107; font-weight: 600;">Home</a>
+        <a href="about.html" style="text-decoration: none; color: #333;">About</a>
+        <a href="courses.html" style="text-decoration: none; color: #333;">Courses</a>
+        <a href="contact.html" style="text-decoration: none; color: #333;">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main">
+    <section class="program-detail">
+      <div class="container">
+        <h1>Python Programming <span class="python-badge">Most Popular</span></h1>
+        <div class="program-info">
+          <div class="program-description">
+            <h3>About the Program</h3>
+            <p>Master Python, the world's most versatile programming language used in web development, data science, AI, automation, and more. Perfect for beginners and experienced programmers alike.</p>
+            
+            <div class="python-highlight">
+              <p><strong>Why Python?</strong> Ranked #1 in popularity for 5+ years, Python powers companies like Google, NASA, and Netflix with its simple syntax and powerful libraries.</p>
+            </div>
+
+            <h3>Core Concepts Covered</h3>
+            <div class="feature-grid">
+              <div class="feature-card">
+                <h4>Fundamentals</h4>
+                <ul>
+                  <li>Syntax & Data Structures</li>
+                  <li>Functions & Modules</li>
+                  <li>File Handling</li>
+                </ul>
+              </div>
+              <div class="feature-card">
+                <h4>OOP in Python</h4>
+                <ul>
+                  <li>Classes & Objects</li>
+                  <li>Inheritance</li>
+                  <li>Magic Methods</li>
+                </ul>
+              </div>
+              <div class="feature-card">
+                <h4>Advanced Topics</h4>
+                <ul>
+                  <li>Decorators</li>
+                  <li>Generators</li>
+                  <li>Context Managers</li>
+                </ul>
+              </div>
+            </div>
+
+            <h3>Hands-on Projects</h3>
+            <ul>
+              <li>Web Scraper for Data Extraction</li>
+              <li>Automated File Organizer</li>
+              <li>Weather App with API Integration</li>
+              <li>Text-Based Adventure Game</li>
+            </ul>
+          </div>
+          
+          <div class="program-details">
+            <h3>Program Details</h3>
+            <p><strong>Duration:</strong> 8 weeks (40 hours)</p>
+            <p><strong>Format:</strong> Hybrid (Online + In-person)</p>
+            <p><strong>Prerequisites:</strong> No coding experience needed</p>
+            <p><strong>Certification:</strong> Python Developer Certificate</p>
+            
+            <h3>Career Pathways</h3>
+            <ul>
+              <li>Python Developer (₹4-12 LPA)</li>
+              <li>Data Analyst/Scientist</li>
+              <li>Automation Engineer</li>
+              <li>Backend Developer</li>
+            </ul>
+            
+            <div class="python-highlight" style="background-color: #fff8e1; border-left-color: #ffc107;">
+              <p><strong>Beginner-Friendly:</strong> Python's simple syntax makes it the perfect first programming language to learn.</p>
+            </div>
+            
+            <a href="https://forms.gle/eWaiHdpVGWx7uR3X7" class="btn-warning">Enroll Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <p>© 2023 Triunity Tech Solutions. All rights reserved.</p>
+      <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+        <a href="#" style="color: white; text-decoration: none;">Privacy Policy</a>
+        <a href="#" style="color: white; text-decoration: none;">Terms of Service</a>
+        <a href="contact.html" style="color: white; text-decoration: none;">Contact Us</a>
+      </div>
+      <div style="margin-top: 1.5rem;">
+        <p>Lucknow, Uttar Pradesh, India</p>
+        <p>Phone: +91 8429395963 | Email: services@triunitytechsolutions.tech</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
